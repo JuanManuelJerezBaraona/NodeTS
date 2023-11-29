@@ -1,1 +1,1 @@
-console.log('Hola Mundo desde app.js');
+require('./js-foundation/03-callbacks');
