@@ -12,6 +12,7 @@ const users = [
 
 
 const getUserById = (id, callback) => {
+    
     const user = users.find(user => user.id === id);
 
     if(!user) {
