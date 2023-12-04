@@ -1,39 +1,49 @@
 import fs from 'fs';
+import { SaveFile } from './save-file.use-case';
 
-export interface SaveFileUseCase {
-    execute: ( options: Options ) => boolean;
-}
+describe('SaveFileUseCase', () => {
 
-export interface Options {
-    fileContent: string;
-    fileDestination?: string;
-    fileName?: string; 
-}
+    afterEach(() => {
+        const outputsFolderExists = fs.existsSync('outputs');
+        if (outputsFolderExists) fs.rmSync('outputs', { recursive: true });
+    });
 
-export class SaveFile implements SaveFileUseCase {
+    test('should save file with default values', () => {
 
-    constructor(
-        /**
-         * repository: StorageRepository
-         */
-    ){}
+        const saveFile = new SaveFile();
+        const filePath = 'outputs/table.txt';
+        const options = {
+            fileContent: 'test'
+        };
 
-    execute( { 
-        fileContent, 
-        fileDestination = 'outputs', 
-        fileName = 'table'
-    }: Options): boolean {
+        const result = saveFile.execute(options);
+        const fileExists = fs.existsSync(filePath);
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        
+        expect(result).toBeTruthy();
+        expect(fileExists).toBeTruthy();
+        expect(fileContent).toEqual(options.fileContent);
 
-        try {
-            fs.mkdirSync(fileDestination, { recursive: true });
-            fs.writeFileSync(`${fileDestination}/${fileName}.txt`, fileContent);
-            return true;
+    });
 
-        } catch (error) {
-            console.error(error);
-            return false;
+    test('should save file with custom values', () => {
+        
+        const saveFile = new SaveFile();
+        const filePath = 'custom-outputs/file-destination/custom-table-name.txt';
+        const options = {
+            fileContent: 'custom content',
+            fileDestination: 'custom-outputs/file-destination',
+            fileName: 'custom-table-name'
         }
 
-    }
+        const result = saveFile.execute(options);
+        const fileExists = fs.existsSync(filePath);
+        const fileContent = fs.readFileSync(filePath, 'utf8');
 
-}
+        expect(result).toBeTruthy();
+        expect(fileExists).toBeTruthy();
+        expect(fileContent).toEqual(options.fileContent);
+
+    });
+
+});
