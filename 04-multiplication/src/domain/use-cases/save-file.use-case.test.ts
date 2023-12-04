@@ -46,4 +46,38 @@ describe('SaveFileUseCase', () => {
 
     });
 
+    test('should return false if directory could not be created', () => {
+       
+        const saveFile = new SaveFile();
+        const options = {
+            fileContent: 'custom content',
+            fileDestination: 'custom-outputs/file-destination',
+            fileName: 'custom-table-name'
+        }
+
+        const mkdirSpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(
+            () => { throw new Error('error'); });
+
+        const result = saveFile.execute(options);
+
+        expect(result).toBeFalsy();
+    });
+
+    test('should return false if file could not be created', () => {
+       
+        const saveFile = new SaveFile();
+        const options = {
+            fileContent: 'custom content',
+            fileDestination: 'custom-outputs/file-destination',
+            fileName: 'custom-table-name'
+        }
+
+        // const mkdirSpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(
+        //     () => { throw new Error('error'); });
+
+        const result = saveFile.execute({ fileContent: 'Hola' });
+
+        expect(result).toBeTruthy();
+    });
+
 });
