@@ -57,3 +57,18 @@
 {"message":"https://google.c is not ok. TypeError: fetch failed","level":"high","createdAt":"2023-12-08T12:25:05.010Z"}
 {"message":"https://google.c is not ok. TypeError: fetch failed","level":"high","createdAt":"2023-12-08T12:25:10.007Z"}
 {"message":"https://google.c is not ok. TypeError: fetch failed","level":"high","createdAt":"2023-12-08T12:25:15.019Z"}
+{"message":"https://google.c is not ok. TypeError: fetch failed","level":"high","createdAt":"2023-12-11T15:41:50.091Z"}
+{"message":"https://google.c is not ok. TypeError: fetch failed","level":"high","createdAt":"2023-12-11T15:42:28.391Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:15.241Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:20.080Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:25.104Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:30.077Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:35.100Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:40.142Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:45.100Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:50.094Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:44:55.068Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:45:00.079Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:45:05.117Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:45:10.089Z"}
+{"message":"Service https://google.com is working","level":"low","createdAt":"2023-12-11T15:45:15.087Z"}
