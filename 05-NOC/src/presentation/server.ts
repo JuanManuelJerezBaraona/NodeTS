@@ -17,15 +17,10 @@ export class Server {
         console.log('Server started...');
 
         // Mandar email
-        const emailService = new EmailService();
-        emailService.sendEmail({
-            to: 'jjerezbaraona@gmail.com',
-            subject: 'Logs de Sistema',
-            htmlBody: `
-                <h1>Logs de Sistema - NOC</h1>
-                <p>Lorem ipsum</p>
-            `
-        });
+        // const emailService = new EmailService();
+        // emailService.sendEmailWithFileSystemLogs(
+        //     ['jjerezbaraona@gmail.com', 'contacto@supercbd.cl']
+        // );
 
         // CronService.createJob(
         //     '*/5 * * * * *',
