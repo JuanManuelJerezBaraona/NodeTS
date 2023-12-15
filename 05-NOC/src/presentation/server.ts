@@ -17,7 +17,9 @@ export class Server {
         console.log('Server started...');
 
         // Mandar email
-        // const emailService = new EmailService();
+        // const emailService = new EmailService(
+        //     fileSystemLogRepository
+        // );
         // emailService.sendEmailWithFileSystemLogs(
         //     ['jjerezbaraona@gmail.com', 'contacto@supercbd.cl']
         // );
