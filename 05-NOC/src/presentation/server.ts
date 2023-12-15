@@ -3,6 +3,7 @@ import { CheckService } from "../domain/use-cases/checks/check-service";
 import { FileSystemDataSource } from "../infrastructure/datasources/file-system.datasource";
 import { LogRepositoryImpl } from "../infrastructure/repositories/log.repository.impl";
 import { CronService } from "./cron/cron-service";
+import { EmailService } from './email/email.service';
 
 
 const fileSystemLogRepository = new LogRepositoryImpl(
@@ -16,6 +17,15 @@ export class Server {
         console.log('Server started...');
 
         // Mandar email
+        const emailService = new EmailService();
+        emailService.sendEmail({
+            to: 'jjerezbaraona@gmail.com',
+            subject: 'Logs de Sistema',
+            htmlBody: `
+                <h1>Logs de Sistema - NOC</h1>
+                <p>Lorem ipsum</p>
+            `
+        });
 
         // CronService.createJob(
         //     '*/5 * * * * *',
