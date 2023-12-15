@@ -1,3 +1,4 @@
+import { envs } from "../config/plugins/envs.plugin";
 import { CheckService } from "../domain/use-cases/checks/check-service";
 import { FileSystemDataSource } from "../infrastructure/datasources/file-system.datasource";
 import { LogRepositoryImpl } from "../infrastructure/repositories/log.repository.impl";
@@ -14,19 +15,21 @@ export class Server {
 
         console.log('Server started...');
 
-        CronService.createJob(
-            '*/5 * * * * *',
-            () => {
-                const url = 'https://google.com';
-                new CheckService(
-                    fileSystemLogRepository,
-                    () => console.log(`${url} is ok!`),
-                    (error) => console.log(error)
-                ).execute(url);
-                // new CheckService().execute('http://localhost:3000');
+        // Mandar email
 
-            }
-        );
+        // CronService.createJob(
+        //     '*/5 * * * * *',
+        //     () => {
+        //         const url = 'https://google.com';
+        //         new CheckService(
+        //             fileSystemLogRepository,
+        //             () => console.log(`${url} is ok!`),
+        //             (error) => console.log(error)
+        //         ).execute(url);
+        //         // new CheckService().execute('http://localhost:3000');
+
+        //     }
+        // );
 
     }
 
